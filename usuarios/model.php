@@ -76,15 +76,17 @@ class Usuario extends DBAbstractModel {
 	}
 	# Generar login 
 	public function login($user_data=array()){
-		if($user_clave != '') {
+		foreach ($user_data as $campo=>$valor) {
+		$$campo = $valor;
+		}
+		if($email!='') {
 			$this->query = "
 			SELECT id, nombre, apellido, email, clave
 			FROM login
-			WHERE email = '$user_email'
-			AND clace = '$clave'
+			WHERE email = '$email'
+			AND clave = '$clave'
 			";
 			$this->get_results_from_query();
-		}
 		if(count($this->rows) == 1) {
 			foreach ($this->rows[0] as $propiedad=>$valor) {
 			$this->$propiedad = $valor;
@@ -93,6 +95,8 @@ class Usuario extends DBAbstractModel {
 		} else {
 			$this->mensaje = 'Usuario no encontrado';
 		}
+		}
+		
 	}
 	# Método constructor
 	function __construct() {

@@ -3,8 +3,8 @@ require_once('constants.php');
 require_once('model.php');
 require_once('view.php');
 function handler() {
-	//	$event = VIEW_GET_USER;
-	$event = VIEW_LOGIN_USER;
+	$event = VIEW_GET_USER;
+	//$event = VIEW_LOGIN_USER;
 	$uri = $_SERVER['REQUEST_URI'];
 	$peticiones = array(SET_USER, GET_USER, DELETE_USER, EDIT_USER,LOGIN_USER,
 	VIEW_SET_USER, VIEW_GET_USER, VIEW_DELETE_USER,
