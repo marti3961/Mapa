@@ -1,3 +1,4 @@
 RewriteEngine on
 RewriteRule ^usuarios/ usuarios/controller.php
 RewriteRule ^mapa/ mapa/controller.php
+RewriteRule ^user/ user/controller.php
