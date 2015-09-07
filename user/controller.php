@@ -3,12 +3,11 @@ require_once('constants.php');
 require_once('model.php');
 require_once('view.php');
 function handler() {
-	$event = VIEW_GET_USER;
-	//$event = VIEW_LOGIN_USER;
+	//	$event = VIEW_GET_USER;
+	$event = VIEW_LOGIN_USER;
 	$uri = $_SERVER['REQUEST_URI'];
-	$peticiones = array(SET_USER, GET_USER, DELETE_USER, EDIT_USER,LOGIN_USER,
-	VIEW_SET_USER, VIEW_GET_USER, VIEW_DELETE_USER,
-	VIEW_EDIT_USER,VIEW_LOGIN_USER);
+	$peticiones = array(SET_USER, EDIT_USER,LOGIN_USER,
+	VIEW_SET_USER,VIEW_EDIT_USER,VIEW_LOGIN_USER);
 	foreach ($peticiones as $peticion) {
 		$uri_peticion = MODULO.$peticion.'/';
 		if( strpos($uri, $uri_peticion) == true ) {
@@ -23,29 +22,18 @@ function handler() {
 			$data = array('mensaje'=>$usuario->mensaje);
 			retornar_vista(VIEW_SET_USER, $data);
 		break;
-		case GET_USER:
-		$usuario->get($user_data);
-		$data = array(
-			'nombre'=>$usuario->nombre,
-			'apellido'=>$usuario->apellido,
-			'email'=>$usuario->email
-		);
-		retornar_vista(VIEW_EDIT_USER, $data);
-		break;
-		case DELETE_USER:
-			$usuario->delete($user_data['email']);
-			$data = array('mensaje'=>$usuario->mensaje);
-			retornar_vista(VIEW_DELETE_USER, $data);
-		break;
 		case EDIT_USER:
 			$usuario->edit($user_data);
 			$data = array('mensaje'=>$usuario->mensaje);
-			retornar_vista(VIEW_GET_USER, $data);
+			retornar_vista(VIEW_EDIT_USER, $data);
 		break;
 		case LOGIN_USER:
-			$usuario->login($user_data);
-			$data = array('mensaje'=>$usuario->mensaje);
-			retornar_vista(VIEW_LOGIN_USER,$data);
+			$usuario->get($user_data);
+			$data = array(
+				'email'=>$usuario->email,
+				'clave'=>$usuario->clave
+			);
+			retornar_vista(VIEW_LOGIN_USER, $data);
 		break;
 		default:
 		retornar_vista($event);

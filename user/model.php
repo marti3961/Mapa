@@ -6,28 +6,14 @@ class Usuario extends DBAbstractModel {
 	public $nombre;
 	public $apellido;
 	public $email;
-	private $clave;
+	public $clave;
 	protected $id;
 ################################# MÉTODOS ##################################
-	# Traer datos de un usuario
-	public function get($user_email='') {
-		if($user_email != '') {
-			$this->query = "
-			SELECT id, nombre, apellido, email, clave
-			FROM login
-			WHERE email = '$user_email'
-			";
-			$this->get_results_from_query();
-		}
-		if(count($this->rows) == 1) {
-			foreach ($this->rows[0] as $propiedad=>$valor) {
-			$this->$propiedad = $valor;
-		}
-		$this->mensaje = 'Usuario encontrado';
-		} else {
-			$this->mensaje = 'Usuario no encontrado';
-		}
-	}
+	#metodos no usados 
+	public function get($user_email='') {}
+		# Eliminar un usuario
+	public function delete($user_email='') {}
+	# Crear un nuevo usuario
 	# Crear un nuevo usuario
 	public function set($user_data=array()) {
 		if(array_key_exists('email', $user_data)) {
@@ -65,38 +51,25 @@ class Usuario extends DBAbstractModel {
 		$this->execute_single_query();
 		$this->mensaje = 'Usuario modificado';
 	}
-	# Eliminar un usuario
-	public function delete($user_email='') {
-		$this->query = "
-		DELETE FROM usuarios
-		WHERE email = '$user_email'
-		";
-		$this->execute_single_query();
-		$this->mensaje = 'Usuario eliminado';
-	}
 	# Generar login 
-	public function login($user_data=array()){
-		foreach ($user_data as $campo=>$valor) {
-		$$campo = $valor;
-		}
-		if($email!='') {
+	public function login($user_email='', $user_clave='') {
+		if($user_email != '') {
 			$this->query = "
 			SELECT id, nombre, apellido, email, clave
 			FROM login
-			WHERE email = '$email'
-			AND clave = '$clave'
+			WHERE email = '$user_email'
+			AND clave = '$user_clave'
 			";
 			$this->get_results_from_query();
+		}
 		if(count($this->rows) == 1) {
 			foreach ($this->rows[0] as $propiedad=>$valor) {
 			$this->$propiedad = $valor;
-		}
+			}
 		$this->mensaje = 'Usuario encontrado';
 		} else {
 			$this->mensaje = 'Usuario no encontrado';
 		}
-		}
-		
 	}
 	# Método constructor
 	function __construct() {
