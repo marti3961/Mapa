@@ -24,16 +24,20 @@ function handler() {
 		break;
 		case EDIT_USER:
 			$usuario->edit($user_data);
-			$data = array('mensaje'=>$usuario->mensaje);
+			$data = array('mensaje'=>$usuario->mensaje,
+				'nombre'=>$usuario->nombre,
+				'email'=>$usuario->email,
+				'apellido'=>$usuario->apellido);
 			retornar_vista(VIEW_EDIT_USER, $data);
 		break;
 		case LOGIN_USER:
-			$usuario->get($user_data);
+			$usuario->login($user_data);
 			$data = array(
+				'nombre'=>$usuario->nombre,
 				'email'=>$usuario->email,
-				'clave'=>$usuario->clave
+				'apellido'=>$usuario->apellido				
 			);
-			retornar_vista(VIEW_LOGIN_USER, $data);
+			retornar_vista(VIEW_EDIT_USER, $data);
 		break;
 		default:
 		retornar_vista($event);

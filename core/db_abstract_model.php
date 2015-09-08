@@ -13,6 +13,7 @@ abstract class DBAbstractModel {
 	abstract protected function set();
 	abstract protected function edit();
 	abstract protected function delete();
+	abstract protected function login();
 	# los siguientes métodos pueden definirse con exactitud y
 	# no son abstractos
 	# Conectar a la base de datos

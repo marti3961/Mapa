@@ -53,22 +53,21 @@ class Usuario extends DBAbstractModel {
 	}
 	# Generar login 
 	public function login($user_email='', $user_clave='') {
-		if($user_email != '') {
+		if($user_email!= '' && $user_clave!=''){
 			$this->query = "
 			SELECT id, nombre, apellido, email, clave
 			FROM login
-			WHERE email = '$user_email'
-			AND clave = '$user_clave'
-			";
+			WHERE email = '$user_email',
+			AND clave = '$user_clave'";
 			$this->get_results_from_query();
 		}
 		if(count($this->rows) == 1) {
 			foreach ($this->rows[0] as $propiedad=>$valor) {
 			$this->$propiedad = $valor;
-			}
-		$this->mensaje = 'Usuario encontrado';
+		}
+		$this->mensaje = 'Usuario encontradoz';
 		} else {
-			$this->mensaje = 'Usuario no encontrado';
+			$this->mensaje = "Usuario no encontradodddz";
 		}
 	}
 	# Método constructor
@@ -80,4 +79,3 @@ class Usuario extends DBAbstractModel {
 		unset($this);
 	}
 }
-?>
