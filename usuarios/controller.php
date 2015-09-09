@@ -44,9 +44,11 @@ function handler() {
 		break;
 		case LOGIN_USER:
 			$usuario->login($user_data);
+			$data = array(
 			'nombre'=>$usuario->nombre,
 			'apellido'=>$usuario->apellido,
 			'email'=>$usuario->email
+			);
 			retornar_vista(VIEW_LOGIN_USER,$data);
 		break;
 		default:

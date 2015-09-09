@@ -40,15 +40,15 @@ function retornar_vista($vista, $data=array()) {
 	$html = render_dinamic_data($html, $diccionario['links_menu']);
 	$html = render_dinamic_data($html, $data);
 	// render {mensaje}
-	if(array_key_exists('nombre', $data)&& array_key_exists('apellido', $data)&& $vista==VIEW_EDIT_USER) {
-		$mensaje = 'Editar usuario '.$data['nombre'].' '.$data['apellido'];
-	} else if($vista!=VIEW_LOGIN_USER) {
+	#if(array_key_exists('nombre', $data)&& array_key_exists('apellido', $data)&& $vista==VIEW_EDIT_USER) {
+	#	$mensaje = 'Editar usuario '.$data['nombre'].' '.$data['apellido'];
+	#} else {
 		if(array_key_exists('mensaje', $data)) {
-		$mensaje = $data['mensaje'];	$mensaje = $data['mensaje'];
+		$mensaje = $data['mensaje'];
 		} else {
-		$mensaje = ' ';
+		$mensaje = 'Datos del usuario:';
 		}
-	}
+	#}
 	$html = str_replace('{mensaje}', $mensaje, $html);
 	print $html;
 }

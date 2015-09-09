@@ -10,10 +10,12 @@ class Usuario extends DBAbstractModel {
 	protected $id;
 ################################# MÉTODOS ##################################
 	#metodos no usados 
-	public function get($user_email='') {}
-		# Eliminar un usuario
+	#traer
+	public function get($user_email='') {
+	}
+	# Eliminar un usuario
 	public function delete($user_email='') {}
-	# Crear un nuevo usuario
+
 	# Crear un nuevo usuario
 	public function set($user_data=array()) {
 		if(array_key_exists('email', $user_data)) {
@@ -52,22 +54,28 @@ class Usuario extends DBAbstractModel {
 		$this->mensaje = 'Usuario modificado';
 	}
 	# Generar login 
-	public function login($user_email='', $user_clave='') {
-		if($user_email!= '' && $user_clave!=''){
+	public function login($user_data=array()) {
+		try{
+		if($user_data['email']!= ''){
 			$this->query = "
 			SELECT id, nombre, apellido, email, clave
 			FROM login
-			WHERE email = '$user_email',
-			AND clave = '$user_clave'";
+			WHERE email = '".$user_data['email']."'
+			AND clave= '".$user_data['clave']."'
+			";
+			#AND clave = '$user_clave'
 			$this->get_results_from_query();
 		}
 		if(count($this->rows) == 1) {
 			foreach ($this->rows[0] as $propiedad=>$valor) {
 			$this->$propiedad = $valor;
 		}
-		$this->mensaje = 'Usuario encontradoz';
+		$this->mensaje = '<script type="text/javascript">alert("usuario '.$this->nombre.' ");</script>';
 		} else {
-			$this->mensaje = "Usuario no encontradodddz";
+			$this->mensaje = '<script type="text/javascript">alert("usuario no");</script>';
+		}
+		} catch (Exception $e) {
+    		$this->mensaje = 'Excepción capturada: '.  $e->getMessage(). "\n";
 		}
 	}
 	# Método constructor
