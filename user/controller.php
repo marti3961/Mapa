@@ -23,9 +23,14 @@ function handler() {
 			retornar_vista(VIEW_SET_USER, $data);
 		break;
 		case EDIT_USER:
+			if(isset($_SESSION["user_id"])){
 			$usuario->edit($user_data);
 			$data = array('mensaje'=>$usuario->mensaje);
 			retornar_vista(VIEW_GET_USER, $data);
+			}else{
+				header("Location:user_dashboard.php");
+			}
+
 		break;
 		case LOGIN_USER:
 			$usuario->login($user_data);
@@ -34,6 +39,7 @@ function handler() {
 				'apellido'=>$usuario->apellido,	
 				'mensaje'=>$usuario->mensaje			
 			);
+
 			retornar_vista(VIEW_EDIT_USER, $data);
 		break;
 		default:

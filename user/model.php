@@ -1,6 +1,7 @@
 <?php
 # Importar modelo de abstracción de base de datos
 require_once('../core/db_abstract_model.php');
+require_once('../core/session_usuarios.php');
 class Usuario extends DBAbstractModel {
 ############################### PROPIEDADES ################################
 	public $nombre;
@@ -55,7 +56,7 @@ class Usuario extends DBAbstractModel {
 	}
 	# Generar login 
 	public function login($user_data=array()) {
-		try{
+		/*try{
 		if($user_data['email']!= ''){
 			$this->query = "
 			SELECT id, nombre, apellido, email, clave
@@ -76,6 +77,10 @@ class Usuario extends DBAbstractModel {
 		}
 		} catch (Exception $e) {
     		$this->mensaje = 'Excepción capturada: '.  $e->getMessage(). "\n";
+		}*/
+		$session_user = new USERsession();
+		if($user_data['email']!= ''){
+		$this->mensaje = $session_user->login_usuarios($user_data['email'], $user_data['clave']);
 		}
 	}
 	# Método constructor
