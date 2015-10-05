@@ -55,33 +55,31 @@ class Usuario extends DBAbstractModel {
 		$this->mensaje = 'Usuario modificado';
 	}
 	# Generar login 
-	public function login($user_data=array()) {
-		/*try{
-		if($user_data['email']!= ''){
-			$this->query = "
+	public function loginUser($user_data=array()) {
+	try{
+	
+		if($user_data['email']!= '' && $user_data["clave"] != ''){
+			/*$this->query = "
 			SELECT id, nombre, apellido, email, clave
 			FROM login
 			WHERE email = '".$user_data['email']."'
 			AND clave= '".$user_data['clave']."'
 			";
 			#AND clave = '$user_clave'
-			$this->get_results_from_query();
+			$this->get_results_from_query();/
 		}
-		if(count($this->rows) == 1) {
+	/*	if(count($this->rows) == 1) {
 			foreach ($this->rows[0] as $propiedad=>$valor) {
 			$this->$propiedad = $valor;
 		}
-		$this->mensaje = '<script type="text/javascript">alert("usuario '.$this->nombre.' ");</script>';
+		$this->mensaje = "usuario encontrado";
 		} else {
-			$this->mensaje = '<script type="text/javascript">alert("usuario no");</script>';
-		}
+			$this->mensaje = 'usuari no encontrado';
+		}*/
 		} catch (Exception $e) {
     		$this->mensaje = 'Excepción capturada: '.  $e->getMessage(). "\n";
-		}*/
-		$session_user = new USERsession();
-		if($user_data['email']!= ''){
-		$this->mensaje = $session_user->login_usuarios($user_data['email'], $user_data['clave']);
 		}
+
 	}
 	# Método constructor
 	function __construct() {

@@ -33,14 +33,15 @@ function handler() {
 
 		break;
 		case LOGIN_USER:
-			$usuario->login($user_data);
+			$usuario->loginUser($user_data);
 			$data = array('nombre'=>$usuario->nombre,
 				'email'=>$usuario->email,
 				'apellido'=>$usuario->apellido,	
 				'mensaje'=>$usuario->mensaje			
 			);
-
-			retornar_vista(VIEW_EDIT_USER, $data);
+			header('Content-Type: application/json');
+			echo json_encode($data);
+			#retornar_vista(VIEW_EDIT_USER, $data);
 		break;
 		default:
 		retornar_vista($event);

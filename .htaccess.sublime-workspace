@@ -1,0 +1,327 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"BEgin",
+				"BEGIN"
+			],
+			[
+				"autorizacion_cx_",
+				"autorizacion_cx_honorarios"
+			],
+			[
+				"au",
+				"autorizacion_cx_honorarios"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"js",
+				"json_encode"
+			],
+			[
+				"user",
+				"user_email"
+			],
+			[
+				"me",
+				"mensaje"
+			],
+			[
+				"em",
+				"user_email"
+			],
+			[
+				"Vi",
+				"VIEW_LOGIN_USER"
+			],
+			[
+				"cla",
+				"clave"
+			],
+			[
+				"user_",
+				"user_clave"
+			],
+			[
+				"db",
+				"db_name"
+			],
+			[
+				"abs",
+				"abstractos"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"mart",
+				"margin-bottom"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"se",
+				"secondAnimation"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"desa",
+				"desarrollo-section"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"We",
+				"WebResource"
+			],
+			[
+				"Clie",
+				"ClientDependencyHandler"
+			],
+			[
+				"Si",
+				"SitemapHandler"
+			],
+			[
+				"userp",
+				"UserProfilePicHandler"
+			],
+			[
+				"User",
+				"UserProfile"
+			],
+			[
+				"Ca",
+				"CaptchaHandler"
+			],
+			[
+				"lin",
+				"LinkClickHandler"
+			],
+			[
+				"get",
+				"getUserMedia"
+			],
+			[
+				"ge",
+				"getUserMedia"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/mvc-mapa/.htaccess.sublime-project"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"autorizacion_cx_honorarios",
+			"TERMINOS",
+			" ).length",
+			"$( \".ui-effects-wrapper\" ).length",
+			"side",
+			"PeerJS Server",
+			"a server si",
+			"node",
+			"EXISTE_TABULADOR_CONSULTA_NOTA_TRABAJO_SOCIAL",
+			"CONTRATO",
+			"contrato",
+			"ruta",
+			"RUTA_PDFS",
+			"var_ruta_imagen",
+			"mover archivo",
+			"index",
+			"tls",
+			"TLS",
+			"all",
+			"553",
+			"27079",
+			"31407",
+			"MARIA EUGENIA",
+			"exist",
+			"existe",
+			"exist",
+			"27608",
+			"2014",
+			"CCHA",
+			"2015",
+			"2014"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Tls",
+			"20152",
+			"2015"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": ".htaccess.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
