@@ -57,28 +57,27 @@ class Usuario extends DBAbstractModel {
 	# Generar login 
 	public function loginUser($user_data=array()) {
 	try{
-	
 		if($user_data['email']!= '' && $user_data["clave"] != ''){
-			/*$this->query = "
+			$this->query = "
 			SELECT id, nombre, apellido, email, clave
 			FROM login
 			WHERE email = '".$user_data['email']."'
 			AND clave= '".$user_data['clave']."'
 			";
 			#AND clave = '$user_clave'
-			$this->get_results_from_query();/
+			$this->get_results_from_query();
 		}
-	/*	if(count($this->rows) == 1) {
+		if(count($this->rows) == 1) {
 			foreach ($this->rows[0] as $propiedad=>$valor) {
-			$this->$propiedad = $valor;
-		}
-		$this->mensaje = "usuario encontrado";
-		} else {
+				$this->$propiedad = $valor;
+			}
+			$this->mensaje = "usuario encontrado";
+		}else{
 			$this->mensaje = 'usuari no encontrado';
-		}*/
-		} catch (Exception $e) {
-    		$this->mensaje = 'Excepción capturada: '.  $e->getMessage(). "\n";
 		}
+	} catch (Exception $e) {
+    	$this->mensaje = 'Excepción capturada: '.  $e->getMessage(). "\n";
+	}
 
 	}
 	# Método constructor
