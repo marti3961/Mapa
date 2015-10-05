@@ -52,8 +52,7 @@ function retornar_vista($vista, $data=array()) {
 	$html = str_replace('{mensaje}', $mensaje, $html);
 	print $html;
 }
-public function retornarjson($data=array()){
+ function retornarjson($data=array()){
    echo json_encode($arr);
-
 	}
 ?>
